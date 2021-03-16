@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.sushant.sampledemomvvmapicall"
+        applicationId "com.sushant.atosapp"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -61,6 +61,12 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    //Dagger
+    implementation "com.google.dagger:dagger:2.22.1"
+    implementation 'javax.annotation:jsr250-api:1.0'
+    kapt "com.google.dagger:dagger-compiler:2.22.1"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:2.22.1"
 
     //images
     implementation 'com.github.bumptech.glide:glide:4.11.0'

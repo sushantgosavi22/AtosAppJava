@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.sushant.atosapp.views.login.viewmodel.LoginViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_10"
+            android:elevation="@dimen/dp_10"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_210"
+                    android:scaleType="fitXY"
+                    app:cornerFamily="rounded"
+                    app:cornerSize="@dimen/dp_10"
+                    app:cornerSizeBottomLeft="0dp"
+                    app:cornerSizeBottomRight="0dp"
+                    app:srcCompat="@drawable/flower" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_20"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/welcome"
+                        android:textColor="@color/black" />
+
+
+                    <com.sushant.atosapp.views.base.CustomTextInputLayout
+                        style="@style/Outlined.Theme"
+                        android:hint="@string/email">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:onTextChanged="@{loginViewModel.onMailTextChanged}"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
+
+                    </com.sushant.atosapp.views.base.CustomTextInputLayout>
+
+                    <com.sushant.atosapp.views.base.CustomTextInputLayout
+                        style="@style/Outlined.Theme"
+                        android:hint="@string/password">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:maxLength="12"
+                            android:maxLines="1"
+                            android:onTextChanged="@{loginViewModel.onPasswordTextChanged}"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
+
+                    </com.sushant.atosapp.views.base.CustomTextInputLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLoginButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/dp_20"
+                        android:clickable="true"
+                        android:enabled="false"
+                        android:focusable="true"
+                        android:text="@string/login"
+                        tools:ignore="UnusedAttribute" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>
